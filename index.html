@@ -65,7 +65,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 40px;
+        gap: 50px;
         opacity: 0;
         transition: opacity 0.2s ease;
         pointer-events: none;
@@ -75,21 +75,22 @@
         opacity: 1;
         pointer-events: all;
     }
+
     .nav-link {
         display: flex;
         align-items: center;
-        gap: 7px;
+        gap: 10px;
         color: #ffffff;
         text-decoration: none;
         font-family: "Doto", sans-serif;
-        font-size: 24px;
+        font-size: 28px;
         font-weight: 900;
         font-variation-settings: "ROND" 100;
-        letter-spacing: 1px;
+        letter-spacing: 2px;
         transition: opacity 0.15s ease;
     }
     .nav-link:hover { opacity: 0.65; }
-    .nav-link svg { width: 20px; height: 20px; fill: #ffffff; flex-shrink: 0; }
+    .nav-link svg { width: 24px; height: 24px; fill: #ffffff; flex-shrink: 0; }
 
     /* ── MAIN CONTENT ── */
     .content {
@@ -195,13 +196,12 @@
         </a>
 
         <!-- Resume -->
-            <a class="nav-link" href="resume.html">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
-                </svg>
-                RESUME
-            </a>
+        <a class="nav-link" href="resume.html">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+            </svg>
+            RESUME
+        </a>
 
     </div>
 </div>
