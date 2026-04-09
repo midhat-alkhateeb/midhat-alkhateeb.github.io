@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Midhat Alkhateeb</title>
+<title>Resume — Midhat Alkhateeb</title>
 <link href="https://fonts.googleapis.com/css2?family=Doto:ROND,wght@0..100,100..900&family=DotGothic16&display=swap" rel="stylesheet">
 <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -13,8 +13,8 @@
         display: flex;
         flex-direction: column;
         min-height: 100vh;
-        font-family: "Doto", sans-serif;
-        overflow: hidden;
+        font-family: "DotGothic16", sans-serif;
+        overflow-x: hidden;
     }
 
     /* ── BACKGROUND SHAPES ── */
@@ -27,7 +27,7 @@
     }
     .bg-shapes svg { width: 100%; height: 100%; }
 
-    /* ── HEADER / TICKER ── */
+    /* ── HEADER ── */
     .header {
         position: fixed;
         top: 0;
@@ -36,82 +36,164 @@
         background: #F02D8C;
         color: #F5E642;
         z-index: 1000;
-        overflow: hidden;
         display: flex;
         align-items: center;
+        justify-content: space-between;
+        padding: 0 28px;
     }
-
-    .ticker-inner {
-        display: flex;
-        align-items: center;
-        white-space: nowrap;
-        will-change: transform;
-        font-family: "DotGothic16", sans-serif;
-        font-size: 24px;
-        letter-spacing: 2px;
-        flex-shrink: 0;
-        color: #F5E642;
-    }
-    .ticker-inner span { display: inline-block; }
-    .sep {
-        color: rgb(245, 230, 66);
-        margin: 0 25px;
-        display: inline-flex; align-items: center
-    }
-
-    .header-overlay {
-        position: absolute;
-        inset: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 50px;
-        opacity: 0;
-        transition: opacity 0.2s ease;
-        pointer-events: none;
-        background: #F02D8C;
-    }
-    .header:hover .header-overlay {
-        opacity: 1;
-        pointer-events: all;
-    }
-
-    .nav-link {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        color: #ffffff;
-        text-decoration: none;
+    .header-title {
         font-family: "Doto", sans-serif;
-        font-size: 28px;
+        font-size: 22px;
         font-weight: 900;
         font-variation-settings: "ROND" 100;
-        letter-spacing: 2px;
-        transition: opacity 0.15s ease;
+        color: #F5E642;
+        text-decoration: none;
+        letter-spacing: -1px;
     }
-    .nav-link:hover { opacity: 0.65; }
-    .nav-link svg { width: 24px; height: 24px; fill: #ffffff; flex-shrink: 0; }
+    .header-back {
+        font-family: "DotGothic16", sans-serif;
+        font-size: 13px;
+        color: #F5E642;
+        text-decoration: none;
+        letter-spacing: 1px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        transition: opacity 0.15s;
+    }
+    .header-back:hover { opacity: 0.65; }
 
     /* ── MAIN CONTENT ── */
     .content {
         flex: 1;
-        padding: 20px 28px;
         margin-top: 60px;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        align-items: flex-start;
+        padding: 48px 28px 48px;
         position: relative;
         z-index: 1;
+        max-width: 860px;
     }
 
-    h1 {
-        font-size: clamp(80px, 13vw, 300px);
-        color: #F02D8C;
+    /* name block */
+    .resume-name {
+        font-family: "Doto", sans-serif;
+        font-size: clamp(52px, 8vw, 110px);
         font-weight: 900;
         font-variation-settings: "ROND" 100;
+        color: #F02D8C;
         line-height: 0.88;
         letter-spacing: -2px;
+        margin-bottom: 20px;
+    }
+
+    .resume-contact {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px 24px;
+        margin-bottom: 36px;
+    }
+    .resume-contact a {
+        color: #080808;
+        text-decoration: none;
+        font-size: 14px;
+        letter-spacing: 0.5px;
+        border-bottom: 1px solid rgba(0,0,0,0.25);
+        transition: border-color 0.15s;
+    }
+    .resume-contact a:hover { border-color: #F02D8C; color: #F02D8C; }
+
+    /* section */
+    .section {
+        margin-bottom: 36px;
+    }
+    .section-title {
+        font-family: "Doto", sans-serif;
+        font-size: 13px;
+        font-weight: 900;
+        font-variation-settings: "ROND" 100;
+        color: #F02D8C;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+        padding-bottom: 6px;
+        border-bottom: 2px solid #F02D8C;
+    }
+
+    .entry { margin-bottom: 20px; }
+    .entry-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        flex-wrap: wrap;
+        gap: 4px;
+        margin-bottom: 2px;
+    }
+    .entry-org {
+        font-family: "Doto", sans-serif;
+        font-size: 16px;
+        font-weight: 900;
+        font-variation-settings: "ROND" 100;
+        color: #080808;
+        letter-spacing: -0.5px;
+    }
+    .entry-date {
+        font-size: 12px;
+        color: #555;
+        letter-spacing: 0.5px;
+        white-space: nowrap;
+    }
+    .entry-role {
+        font-size: 13px;
+        color: #F02D8C;
+        letter-spacing: 1px;
+        margin-bottom: 6px;
+        font-style: italic;
+    }
+    .entry-sub {
+        font-size: 13px;
+        color: #444;
+        letter-spacing: 0.3px;
+        margin-bottom: 4px;
+    }
+    ul.entry-bullets {
+        list-style: none;
+        padding: 0;
+    }
+    ul.entry-bullets li {
+        font-size: 13px;
+        color: #333;
+        letter-spacing: 0.2px;
+        line-height: 1.6;
+        padding-left: 16px;
+        position: relative;
+        margin-bottom: 4px;
+    }
+    ul.entry-bullets li::before {
+        content: '✦';
+        position: absolute;
+        left: 0;
+        color: #F02D8C;
+        font-size: 8px;
+        top: 4px;
+    }
+
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 10px;
+    }
+    .skill-block { }
+    .skill-label {
+        font-size: 11px;
+        color: #F02D8C;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 4px;
+    }
+    .skill-value {
+        font-size: 13px;
+        color: #333;
+        letter-spacing: 0.5px;
+        line-height: 1.5;
     }
 
     /* ── FOOTER ── */
@@ -121,7 +203,7 @@
         text-align: center;
         padding: 20px;
         font-family: "Doto", sans-serif;
-        font-size: 16px;
+        font-size: 14px;
         letter-spacing: 0.5px;
         position: relative;
         z-index: 1;
@@ -173,100 +255,128 @@
 </div>
 
 <!-- HEADER -->
-<div class="header" id="header">
-    <div id="tickerInner" class="ticker-inner"></div>
-    <div class="header-overlay">
+<header class="header">
+    <a class="header-title" href="index.html">MIDHAT ALKHATEEB</a>
+    <a class="header-back" href="index.html">← BACK</a>
+</header>
 
-        <!-- GitHub -->
-        <a class="nav-link" href="https://github.com/midhat-alkhateeb" target="_blank">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.165c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
-            GITHUB
-        </a>
-
-        <!-- LinkedIn -->
-        <a class="nav-link" href="https://www.linkedin.com/in/midhat-alkhateeb-4b7bb51b8/" target="_blank">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            LINKEDIN
-        </a>
-
-        <!-- Email -->
-        <a class="nav-link" href="mailto:midhat.alkhateeb@gmail.com">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
-            EMAIL
-        </a>
-
-        <!-- Resume -->
-        <a class="nav-link" href="resume.html">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
-            </svg>
-            RESUME
-        </a>
-
-    </div>
-</div>
-
-<!-- MAIN -->
+<!-- RESUME CONTENT -->
 <div class="content">
-    <h1>MIDHAT<br>ALKHATEEB</h1>
+
+    <div class="resume-name">MIDHAT<br>ALKHATEEB</div>
+
+    <div class="resume-contact">
+        <a href="tel:7164447741">716-444-7741</a>
+        <a href="mailto:midhatal@buffalo.edu">midhatal@buffalo.edu</a>
+        <a href="https://linkedin.com/in/midhat-alkhateeb-4b7bb51b8" target="_blank">LinkedIn</a>
+        <a href="https://github.com/midhat-alkhateeb" target="_blank">GitHub</a>
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="section">
+        <div class="section-title">Education</div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-org">University at Buffalo, SUNY</span>
+                <span class="entry-date">Anticipated May 2028</span>
+            </div>
+            <div class="entry-role">Bachelor of Science, Computer Science</div>
+            <div class="entry-sub">Minor: Software Engineering</div>
+        </div>
+    </div>
+
+    <!-- WORK EXPERIENCE -->
+    <div class="section">
+        <div class="section-title">Work Experience</div>
+
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-org">Society of Automotive Engineers, UB</span>
+                <span class="entry-date">Sep 2024 – May 2025</span>
+            </div>
+            <div class="entry-role">Data Acquisition Engineer</div>
+            <ul class="entry-bullets">
+                <li>Worked in a team of four developing a custom in-house E-CVT, implementing mechanical, electrical and software engineering concepts to calibrate and precisely actuate a ten-horsepower motor using an Arduino Uno and the Arduino language ecosystem.</li>
+                <li>Wrote logic code for actuation and PI controller to obtain optimal gear ratios.</li>
+            </ul>
+        </div>
+
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-org">The Essential Machine</span>
+                <span class="entry-date">May–Sep 2021, Jun–Sep 2022</span>
+            </div>
+            <div class="entry-role">Software Engineering Intern — Buffalo, New York</div>
+            <ul class="entry-bullets">
+                <li>Led a team of five to develop a software solution for tracking aid vending machine locations using Google API, managing design and implementation across a JavaScript website and Swift application.</li>
+                <li>Collaborated with UI/UX design team to ensure sleek realization of user-friendly designs.</li>
+                <li>Contributed to developing the company's website and ecosystem using HTML, CSS, and JavaScript.</li>
+                <li>Practiced code review and unit testing.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- AWARDS -->
+    <div class="section">
+        <div class="section-title">Awards</div>
+
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-org">First Place — "Local Hack Day: Share" by MLH</span>
+                <span class="entry-date">2021</span>
+            </div>
+            <ul class="entry-bullets">
+                <li>Collaborated with a team to build multiple small projects to win mini competitions over the course of a week.</li>
+            </ul>
+        </div>
+
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-org">Third Place — "Snakes and Hackers" by MLH</span>
+                <span class="entry-date">2021</span>
+            </div>
+            <ul class="entry-bullets">
+                <li>Developed a digital recreation of the Sling Puck board game, implementing an in-house physics system in Unity.</li>
+            </ul>
+        </div>
+
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-org">Fourth Place — "Surprise Us Hack" by MLH</span>
+                <span class="entry-date">2021</span>
+            </div>
+            <ul class="entry-bullets">
+                <li>Created a driving video game using Unity and an in-house physics engine for arcade vehicle dynamics.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- SKILLS -->
+    <div class="section">
+        <div class="section-title">Skills</div>
+        <div class="skills-grid">
+            <div class="skill-block">
+                <div class="skill-label">Languages</div>
+                <div class="skill-value">Java, Python, C, C#, C++</div>
+            </div>
+            <div class="skill-block">
+                <div class="skill-label">Web</div>
+                <div class="skill-value">HTML, CSS, JavaScript</div>
+            </div>
+            <div class="skill-block">
+                <div class="skill-label">Tools</div>
+                <div class="skill-value">IntelliJ, Visual Studio, Emacs, Unity, Arduino</div>
+            </div>
+        </div>
+    </div>
+
 </div>
 
-<!-- FOOTER -->
 <footer><p>© 2026 Midhat Alkhateeb</p></footer>
-
-<iframe id="ytMusic" width="0" height="0"
-    src="https://www.youtube.com/embed/qWaBqUUtt60?autoplay=1&loop=1&playlist=qWaBqUUtt60&controls=0&mute=0"
-    frameborder="0" allow="autoplay"></iframe>
-
-<script>
-    const inner = document.getElementById('tickerInner');
-    const header = document.getElementById('header');
-    const SPEED = 60;
-
-    function makeUnit() {
-        const frag = document.createDocumentFragment();
-        const sep = document.createElement('span');
-        sep.className = 'sep';
-        sep.textContent = '✦';
-        const word = document.createElement('span');
-        word.textContent = 'HIRE ME\u00A0';
-        frag.appendChild(sep);
-        frag.appendChild(word);
-        return frag;
-    }
-
-    const probe = document.createElement('div');
-    probe.style.cssText = 'position:absolute;visibility:hidden;white-space:nowrap;font-family:"DotGothic16",sans-serif;font-size:24px;letter-spacing:2px;';
-    probe.appendChild(makeUnit());
-    document.body.appendChild(probe);
-
-    document.fonts.ready.then(() => {
-        const unitWidth = probe.offsetWidth;
-        document.body.removeChild(probe);
-
-        const needed = Math.ceil((window.innerWidth * 3) / unitWidth) + 6;
-        for (let i = 0; i < needed; i++) inner.appendChild(makeUnit());
-
-        let offset = 0, lastTime = null, paused = false;
-        header.addEventListener('mouseenter', () => paused = true);
-        header.addEventListener('mouseleave', () => paused = false);
-
-        function tick(ts) {
-            if (lastTime !== null && !paused) {
-                const delta = (ts - lastTime) / 1000;
-                offset += SPEED * delta;
-                if (offset >= unitWidth) offset -= unitWidth;
-                inner.style.transform = `translateX(${-offset}px)`;
-            }
-            lastTime = ts;
-            requestAnimationFrame(tick);
-        }
-        requestAnimationFrame(tick);
-    });
-</script>
 
 </body>
 </html>
+
 
 </body>
 </html>
